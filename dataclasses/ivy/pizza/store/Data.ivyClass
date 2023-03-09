@@ -1,4 +1,6 @@
 Data #class
 ivy.pizza.store #namespace
-productList List<ivy.pizza.store.ProductEntity> #field
-productList PERSISTENT #fieldModifier
+pizzaList List<ivy.pizza.store.ProductEntity> #field
+pizzaList PERSISTENT #fieldModifier
+drinkList List<ivy.pizza.store.ProductEntity> #field
+drinkList PERSISTENT #fieldModifier

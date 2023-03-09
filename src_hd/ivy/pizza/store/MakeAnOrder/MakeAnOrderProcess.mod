@@ -51,7 +51,8 @@ Ms0 f6 actionTable 'out=in;
 ' #txt
 Ms0 f6 actionCode 'import ivy.pizza.store.beans.ProductBean;
 ProductBean bean = new ProductBean();
-in.productList = bean.getProducts();' #txt
+in.pizzaList = bean.getProducts();
+in.drinkList = bean.getProducts();' #txt
 Ms0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>

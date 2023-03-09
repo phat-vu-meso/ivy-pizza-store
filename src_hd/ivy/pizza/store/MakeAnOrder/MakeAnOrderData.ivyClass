@@ -1,4 +1,4 @@
-Data #class
-ivy.pizza.store #namespace
+MakeAnOrderData #class
+ivy.pizza.store.MakeAnOrder #namespace
 productList List<ivy.pizza.store.ProductEntity> #field
 productList PERSISTENT #fieldModifier

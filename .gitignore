@@ -1,11 +1,17 @@
+# general
+Thumbs.db
+.DS_Store
+*~
+*.log
+
+# java
+*.class
+hs_err_pid*
+
+# maven
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
+
+# ivy
+classes/
+src_dataClasses/
+src_wsproc/

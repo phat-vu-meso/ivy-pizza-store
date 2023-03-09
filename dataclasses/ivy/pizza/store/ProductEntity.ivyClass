@@ -1,0 +1,26 @@
+ProductEntity #class
+'basic info of product entity class' #classComment
+true #isEntity
+ivy.pizza.store #namespace
+product #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+featuredImageUrl String #field
+featuredImageUrl featured_image_url #dbFieldName
+featuredImageUrl PERSISTENT #fieldModifier
+featuredImageUrl 2000 #dbFieldLength
+basePrice Double #field
+basePrice base_price #dbFieldName
+basePrice PERSISTENT #fieldModifier
+basePrice NOT_NULLABLE #fieldModifier
+category ivy.pizza.store.CategoryEntity #field
+category category_id #dbFieldName
+category PERSISTENT #fieldModifier
+category NOT_NULLABLE #fieldModifier
+category MANY_TO_ONE #fieldAssociation
+category PERSIST #fieldCascadeTypes

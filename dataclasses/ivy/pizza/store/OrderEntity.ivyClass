@@ -1,0 +1,32 @@
+OrderEntity #class
+true #isEntity
+ivy.pizza.store #namespace
+orders #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+orderDate Long #field
+orderDate order_date #dbFieldName
+orderDate PERSISTENT #fieldModifier
+customerName String #field
+customerName customer_name #dbFieldName
+customerName PERSISTENT #fieldModifier
+customerName 500 #dbFieldLength
+customerPhone String #field
+customerPhone customer_phone #dbFieldName
+customerPhone PERSISTENT #fieldModifier
+customerPhone 100 #dbFieldLength
+deliveryAddress String #field
+deliveryAddress delivery_address #dbFieldName
+deliveryAddress PERSISTENT #fieldModifier
+deliveryAddress 1000 #dbFieldLength
+orderStatus ivy.pizza.store.enums.OrderStatus #field
+orderStatus order_status #dbFieldName
+orderStatus PERSISTENT #fieldModifier
+orderDetails List<ivy.pizza.store.OrderDetailEntity> #field
+orderDetails PERSISTENT #fieldModifier
+orderDetails ONE_TO_MANY #fieldAssociation
+orderDetails PERSIST #fieldCascadeTypes
+orderDetails order #mappedByFieldName

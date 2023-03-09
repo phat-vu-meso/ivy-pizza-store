@@ -1,0 +1,17 @@
+CategoryEntity #class
+'Product category' #classComment
+true #isEntity
+ivy.pizza.store #namespace
+category #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+productList List<ivy.pizza.store.ProductEntity> #field
+productList PERSISTENT #fieldModifier
+productList ONE_TO_MANY #fieldAssociation
+productList PERSIST #fieldCascadeTypes
+productList category #mappedByFieldName

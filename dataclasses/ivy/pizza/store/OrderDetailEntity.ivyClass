@@ -1,0 +1,23 @@
+OrderDetailEntity #class
+true #isEntity
+ivy.pizza.store #namespace
+order_details #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+quantity Integer #field
+quantity PERSISTENT #fieldModifier
+totalPrice Double #field
+totalPrice PERSISTENT #fieldModifier
+productId ivy.pizza.store.ProductEntity #field
+productId product_id #dbFieldName
+productId PERSISTENT #fieldModifier
+productId MANY_TO_ONE #fieldAssociation
+productId PERSIST #fieldCascadeTypes
+order ivy.pizza.store.OrderEntity #field
+order order_id #dbFieldName
+order PERSISTENT #fieldModifier
+order MANY_TO_ONE #fieldAssociation
+order MERGE #fieldCascadeTypes

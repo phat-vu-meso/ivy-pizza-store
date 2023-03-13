@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<restClients/>
+<restClients>
+    <restClient>
+        <uuid>845a4b02-4c87-4962-a7fa-46901bd0d370</uuid>
+        <name>get gender client</name>
+        <description>demo how to invoke rest api from ivy</description>
+        <configuration>
+            <uri>https://api.genderize.io/</uri>
+            <property>
+                <name>JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES</name>
+                <value>false</value>
+                <password>false</password>
+            </property>
+            <feature>
+                <class>ch.ivyteam.ivy.rest.client.mapper.JsonFeature</class>
+            </feature>
+        </configuration>
+    </restClient>
+</restClients>

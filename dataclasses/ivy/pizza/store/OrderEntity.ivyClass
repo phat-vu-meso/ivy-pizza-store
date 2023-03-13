@@ -2,11 +2,10 @@ OrderEntity #class
 true #isEntity
 ivy.pizza.store #namespace
 orders #dbTableName
-id Integer #field
+id String #field
 id Identifier #fieldComment
 id PERSISTENT #fieldModifier
 id ID #fieldModifier
-id GENERATED #fieldModifier
 orderDate Long #field
 orderDate order_date #dbFieldName
 orderDate PERSISTENT #fieldModifier
@@ -14,6 +13,7 @@ customerName String #field
 customerName customer_name #dbFieldName
 customerName PERSISTENT #fieldModifier
 customerName 500 #dbFieldLength
+customerSalutation String #field
 customerPhone String #field
 customerPhone customer_phone #dbFieldName
 customerPhone PERSISTENT #fieldModifier

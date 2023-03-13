@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<ui:composition>
+	<div>
+		<p:dataTable class="table-orders" rows="10" paginator="true"
+			paginatorPosition="both"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+			rowIndexVar="index" var="order" value="#{pendingOrders}">
+			<p:column width="20" headerText="No.">
+				<h:outputText value="#{index + 1}" />
+			</p:column>
+
+			<p:column headerText="Order No" sortBy="#{order.id}">
+				<h:outputText value="#{order.id}">
+				</h:outputText>
+			</p:column>
+			
+			<p:column headerText="Date" sortBy="#{order.orderDate}">
+				<h:outputText value="#{order.orderDate*1000}">
+					<f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+				</h:outputText>
+			</p:column>
+			<p:column headerText="Name">
+				<h:outputText value="#{order.customerName}" />
+			</p:column>
+
+			<p:column headerText="Phone">
+				<h:outputText value="#{order.customerPhone}" />
+			</p:column>
+			
+			
+			<!-- <p:column headerText="Price">
+				<h:outputText value="#{orderBean.totalOrderPrice((order.id))}" />
+			</p:column> -->
+			
+	<!-- 		<p:column headerText="Items" width="200">
+				<ul style="padding: 0 !important;">
+					<ui:repeat value="#{order.items}" var="item">
+						<li style="list-style: none;"><h:outputText value="#{item.productName}">
+							</h:outputText> <h:outputText value="&#160;" /> <h:outputText value="&#160;" />
+							<h:outputText value="&#160;" /> <h:outputText
+								value="x #{item.quantity}">
+							</h:outputText></li>
+					</ui:repeat>
+				</ul>
+			</p:column> -->
+
+			<p:column headerText="Actions">
+				<h:form align="left">
+					<h:panelGroup>
+						<p:commandLink actionListener="#{logic.confirmOrder((order.id), 'confirmed')}"
+							value="Confirm" update='@(.table-orders)' style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"
+							/>
+						<span style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"> | </span>
+						<p:commandLink actionListener="#{logic.cancelOrder(order.id)}"
+							style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"
+							value="Cancel" update='@(.table-orders)' />
+							
+						<p:commandLink actionListener="#{logic.confirmOrder((order.id), 'delivering')}"
+							value="Done" update='@(.table-orders)' style="display: #{orderType == 'confirmed' ? 'inline-block' : 'none'};"/>
+							
+						<p:commandLink actionListener="#{logic.confirmOrder((order.id), 'done')}"
+							value="Done" update='@(.table-orders)' style="display: #{orderType == 'delivering' ? 'inline-block' : 'none'};"/>
+					</h:panelGroup>
+				</h:form>
+			</p:column>
+		</p:dataTable>
+	</div>
+</ui:composition>
+</html>

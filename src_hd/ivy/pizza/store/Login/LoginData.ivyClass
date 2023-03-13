@@ -1,0 +1,8 @@
+LoginData #class
+ivy.pizza.store.Login #namespace
+username String #field
+username PERSISTENT #fieldModifier
+password String #field
+password PERSISTENT #fieldModifier
+isUserAuthenticated Boolean #field
+isUserAuthenticated PERSISTENT #fieldModifier

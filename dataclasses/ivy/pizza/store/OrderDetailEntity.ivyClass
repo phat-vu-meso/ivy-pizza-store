@@ -11,11 +11,11 @@ quantity Integer #field
 quantity PERSISTENT #fieldModifier
 totalPrice Double #field
 totalPrice PERSISTENT #fieldModifier
-productId ivy.pizza.store.ProductEntity #field
-productId product_id #dbFieldName
-productId PERSISTENT #fieldModifier
-productId MANY_TO_ONE #fieldAssociation
-productId PERSIST #fieldCascadeTypes
+product ivy.pizza.store.ProductEntity #field
+product product_id #dbFieldName
+product PERSISTENT #fieldModifier
+product MANY_TO_ONE #fieldAssociation
+product #fieldCascadeTypes
 order ivy.pizza.store.OrderEntity #field
 order order_id #dbFieldName
 order PERSISTENT #fieldModifier

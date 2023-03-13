@@ -1,0 +1,15 @@
+HandleOrderData #class
+ivy.pizza.store.HandleOrder #namespace
+pendingOrders List<ivy.pizza.store.OrderEntity> #field
+pendingOrders PERSISTENT #fieldModifier
+orderId String #field
+orderId 'Selected order to do an action, e.g confirm or cancel that order' #fieldComment
+orderId PERSISTENT #fieldModifier
+loggedInUser ch.ivyteam.ivy.security.IUser #field
+loggedInUser PERSISTENT #fieldModifier
+orderType String #field
+orderType 'based on logged in user role, will fetch corresponding orders type, such as Pending orders or Confirm orders' #fieldComment
+orderType PERSISTENT #fieldModifier
+orderStatus String #field
+orderStatus 'status that the order will be updated' #fieldComment
+orderStatus PERSISTENT #fieldModifier

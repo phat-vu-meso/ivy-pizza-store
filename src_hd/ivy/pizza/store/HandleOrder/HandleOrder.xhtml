@@ -9,7 +9,10 @@
 	<ui:composition template="/layouts/basic-8.xhtml">
 		<ui:define name="title">Le PIZZA STORE - Admin</ui:define>
 		<ui:define name="logout-component">
-			<span style="color: green; font-weight: bold">Hello #{data.loggedInUser.name} (#{data.loggedInUser.displayName})> </span>
+			<span style="color: green; font-weight: bold">
+			#{ivy.cms.co('/Texts/hello')}
+			
+			</span>
 			<h:outputText value="&#160;" />
 			<h:outputText value="&#160;" />
 			<h:form>

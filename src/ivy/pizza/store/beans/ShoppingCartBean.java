@@ -13,19 +13,26 @@ import javax.transaction.Transactional;
 
 import org.apache.commons.lang.StringUtils;
 
+import ch.ivyteam.ivy.environment.Ivy;
 import ivy.pizza.store.OrderDetailEntity;
 import ivy.pizza.store.OrderEntity;
 import ivy.pizza.store.ProductEntity;
 import ivy.pizza.store.repository.OrderRepository;
+import lombok.Getter;
+import lombok.Setter;
 
 @ManagedBean(name = "shoppingCartBean")
 @SessionScoped
 public class ShoppingCartBean implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
 	private OrderRepository orderRepository;
 	
+	@Getter
+	@Setter
 	private List<OrderDetailEntity> carts;
+	
+	@Getter
+	@Setter
 	private OrderEntity order;
 	
 	public ShoppingCartBean() {
@@ -49,6 +56,7 @@ public class ShoppingCartBean implements Serializable{
 		order.setOrderDetails(carts);
 		orderRepository.saveOrder(order);
 		resetOrder();
+		Ivy.log().info("A new order has been created " + order.getId());
 		return orderId;
 	}
 	
@@ -97,21 +105,5 @@ public class ShoppingCartBean implements Serializable{
 	public String getTotalOrderPrice() {
 		Double total = this.carts.stream().reduce(0D, (subtotal, item) -> subtotal + item.getTotalPrice(), Double::sum);
 		return String.format("%.2f", total);
-	}
-
-	public List<OrderDetailEntity> getCarts() {
-		return carts;
-	}
-
-	public void setCarts(List<OrderDetailEntity> carts) {
-		this.carts = carts;
-	}
-
-	public OrderEntity getOrder() {
-		return order;
-	}
-
-	public void setOrder(OrderEntity order) {
-		this.order = order;
 	}
 }

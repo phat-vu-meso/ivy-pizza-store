@@ -27,7 +27,6 @@ Hs0 @UdMethod f16 '' #zField
 Hs0 @GridStep f17 '' #zField
 Hs0 @PushWFArc f18 '' #zField
 Hs0 @PushWFArc f15 '' #zField
-Hs0 @UserDialog f20 '' #zField
 Hs0 @PushWFArc f19 '' #zField
 >Proto Hs0 Hs0 HandleOrderProcess #zField
 Hs0 f0 guid 186D02E887055859 #txt
@@ -181,21 +180,7 @@ Hs0 f18 93 432 160 432 #arcP
 Hs0 f15 264 144 296 210 #arcP
 Hs0 f15 1 296 144 #addKink
 Hs0 f15 0 0.8565296650516696 0 0 #arcLabel
-Hs0 f20 dialogId ivy.pizza.store.Login #txt
-Hs0 f20 startMethod start() #txt
-Hs0 f20 requestActionDecl '<> param;' #txt
-Hs0 f20 responseMappingAction 'out=in;
-' #txt
-Hs0 f20 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Login</name>
-    </language>
-</elementInfo>
-' #txt
-Hs0 f20 328 410 112 44 -14 -8 #rect
-Hs0 f20 @|UserDialogIcon #fIcon
-Hs0 f19 272 432 328 432 #arcP
+Hs0 f19 216 454 216 523 #arcP
 >Proto Hs0 .type ivy.pizza.store.HandleOrder.HandleOrderData #txt
 >Proto Hs0 .processKind HTML_DIALOG #txt
 >Proto Hs0 -8 -8 16 16 16 26 #rect
@@ -217,4 +202,4 @@ Hs0 f18 head f17 mainIn #connect
 Hs0 f13 mainOut f15 tail #connect
 Hs0 f15 head f6 mainIn #connect
 Hs0 f17 mainOut f19 tail #connect
-Hs0 f19 head f20 mainIn #connect
+Hs0 f19 head f4 mainIn #connect

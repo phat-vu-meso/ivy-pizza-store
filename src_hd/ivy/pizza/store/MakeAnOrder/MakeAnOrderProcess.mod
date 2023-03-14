@@ -152,9 +152,13 @@ Ms0 f13 actionCode 'import ivy.pizza.store.utils.BeanContextUtils;
 import ivy.pizza.store.beans.ShoppingCartBean;
 import javax.faces.context.FacesContext;
 import javax.faces.application.FacesMessage;
+import ch.ivyteam.ivy.environment.Ivy;
+
+Ivy.log().info("creating a new order");
 
 ShoppingCartBean bean = BeanContextUtils.findBean("shoppingCartBean", ShoppingCartBean.class) as ShoppingCartBean;
 String orderId = bean.saveOrder();
+
 
 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Thank you for your order! ID = " + orderId, "");
 FacesContext.getCurrentInstance().addMessage(null, msg);' #txt

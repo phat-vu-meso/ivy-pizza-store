@@ -26,7 +26,20 @@
 					<f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
 				</h:outputText>
 			</p:column>
-			<p:column headerText="Name">
+			
+			<p:column headerText="Items" width="200">
+				<ul style="padding: 0 !important;">
+					<ui:repeat value="#{order.orderDetails}" var="item">
+						<li style="list-style: none;"><h:outputText value="#{item.product.name}">
+							</h:outputText> <h:outputText value="&#160;" /> <h:outputText value="&#160;" />
+							<h:outputText value="&#160;" /> <h:outputText
+								value="x #{item.quantity}">
+							</h:outputText></li>
+					</ui:repeat>
+				</ul>
+			</p:column>
+			
+			<p:column headerText="Customer">
 				<h:outputText value="#{order.customerName}" />
 			</p:column>
 
@@ -35,21 +48,9 @@
 			</p:column>
 			
 			
-			<!-- <p:column headerText="Price">
-				<h:outputText value="#{orderBean.totalOrderPrice((order.id))}" />
-			</p:column> -->
-			
-	<!-- 		<p:column headerText="Items" width="200">
-				<ul style="padding: 0 !important;">
-					<ui:repeat value="#{order.items}" var="item">
-						<li style="list-style: none;"><h:outputText value="#{item.productName}">
-							</h:outputText> <h:outputText value="&#160;" /> <h:outputText value="&#160;" />
-							<h:outputText value="&#160;" /> <h:outputText
-								value="x #{item.quantity}">
-							</h:outputText></li>
-					</ui:repeat>
-				</ul>
-			</p:column> -->
+			<p:column headerText="Price">
+				<h:outputText value="#{orderBean.getTotalOrderPrice((order))}" />
+			</p:column>
 
 			<p:column headerText="Actions">
 				<h:form align="left">
@@ -57,7 +58,7 @@
 						<p:commandLink actionListener="#{logic.confirmOrder((order.id), 'confirmed')}"
 							value="Confirm" update='@(.table-orders)' style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"
 							/>
-						<span style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"> | </span>
+						<span style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};">  |  </span>
 						<p:commandLink actionListener="#{logic.cancelOrder(order.id)}"
 							style="display: #{orderType == 'pending' ? 'inline-block' : 'none'};"
 							value="Cancel" update='@(.table-orders)' />

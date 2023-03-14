@@ -20,7 +20,7 @@
 					<div>
 						<p:inputText id="salutation" value="#{data.customerSalutation}" style="width: 30%" class="salutation-text"/>
 						<span style="margin-left:20px"></span>
-						<p:commandButton value="Get Gender" icon="fa fa-globe"
+						<p:commandButton value="Get Gender (DEMO)" icon="fa fa-globe"
 							update='@(.salutation-text)'
 							actionListener="#{logic.getGender(shoppingCartBean.order.customerName)}"
 							style="width: 40%" />

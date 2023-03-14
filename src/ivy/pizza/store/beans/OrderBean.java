@@ -1,7 +1,6 @@
 package ivy.pizza.store.beans;
 
 import static ivy.pizza.store.enums.OrderStatus.CANCELED;
-import static ivy.pizza.store.enums.OrderStatus.CONFIRMED;
 
 import java.util.List;
 
@@ -40,7 +39,8 @@ public class OrderBean {
 	}
 	
 	public String getTotalOrderPrice(OrderEntity order) {
-		Double value = order.getOrderDetails().stream().reduce(0D, (total, item) -> total + item.getTotalPrice(), Double::sum);
+		Double value = order.getOrderDetails().stream()
+												.reduce(0D, (total, item) -> total + item.getTotalPrice(), Double::sum);
 		return String.format("%.2f", value);
 	}
 	
